@@ -76,6 +76,11 @@ public class GameBoard {
                 || cellPosition.isCollIndexMoreThanOrEqual(colSize);
     }
 
+    public CellSnapshot getSnapshot(CellPosition cellPosition) {
+        Cell cell = findCell(cellPosition);
+        return cell.getSnapshot();
+    }
+
     public void initializeGame() {
         CellPositions cellPositions = CellPositions.from(board);
 
@@ -112,11 +117,6 @@ public class GameBoard {
 
     private void updateCellAt(CellPosition position, Cell cell) {
         board[position.getRowIndex()][position.getColIndex()] = cell;
-    }
-
-    public String getSign(CellPosition cellPosition) {
-        Cell cell = findCell(cellPosition);
-        return cell.getSign();
     }
 
     private Cell findCell(CellPosition cellPosition) {
