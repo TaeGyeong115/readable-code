@@ -26,11 +26,8 @@ public class CellState {
         this.isFlagged = true;
     }
 
-    public boolean isChecked() {
-        return isFlagged || isOpened;
-    }
-
     public boolean isFlagged() {
         return isFlagged;
     }
+
 }
