@@ -1,30 +1,18 @@
 package cleancode.studycafe.tobe.config;
 
-import cleancode.studycafe.tobe.io.ConsoleInputHandler;
-import cleancode.studycafe.tobe.io.ConsoleOutputHandler;
-import cleancode.studycafe.tobe.io.StudyCafeFileHandler;
+import cleancode.studycafe.tobe.io.*;
 
 public class StudyCafeConfig {
 
-    private final StudyCafeFileHandler handler;
-    private final ConsoleInputHandler consoleInputHandler;
-    private final ConsoleOutputHandler consoleOutputHandler;
-
-    public StudyCafeConfig(StudyCafeFileHandler handler, ConsoleInputHandler consoleInputHandler, ConsoleOutputHandler consoleOutputHandler) {
-        this.handler = handler;
-        this.consoleInputHandler = consoleInputHandler;
-        this.consoleOutputHandler = consoleOutputHandler;
+    public InputHandler getInputHandler() {
+        return new ConsoleInputHandler();
     }
 
-    public ConsoleInputHandler getInputHandler() {
-        return consoleInputHandler;
+    public OutputHandler getOutputHandler() {
+        return new ConsoleOutputHandler();
     }
 
-    public ConsoleOutputHandler getOutputHandler() {
-        return consoleOutputHandler;
-    }
-
-    public StudyCafeFileHandler getHandler() {
-        return handler;
+    public FileHandler getFileHandler() {
+        return new StudyCafeFileHandler();
     }
 }

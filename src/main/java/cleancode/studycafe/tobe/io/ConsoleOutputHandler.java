@@ -48,7 +48,7 @@ public class ConsoleOutputHandler implements OutputHandler {
     }
 
     @Override
-    public void showLockerSummary(boolean lockerSelection, StudyCafePass selectedPass, StudyCafeLockerPass lockerPass) {
+    public void showPassOrderSummary(boolean lockerSelection, StudyCafePass selectedPass, StudyCafeLockerPass lockerPass) {
         if (lockerSelection) {
             showPassOrderSummary(selectedPass, lockerPass);
         } else {
@@ -56,8 +56,7 @@ public class ConsoleOutputHandler implements OutputHandler {
         }
     }
 
-    @Override
-    public void showPassOrderSummary(StudyCafePass selectedPass, StudyCafeLockerPass lockerPass) {
+    private void showPassOrderSummary(StudyCafePass selectedPass, StudyCafeLockerPass lockerPass) {
         System.out.println();
         System.out.println("이용 내역");
         System.out.println("이용권: " + selectedPass.display());
