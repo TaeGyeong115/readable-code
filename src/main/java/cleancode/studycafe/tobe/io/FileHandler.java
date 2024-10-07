@@ -4,6 +4,7 @@ import cleancode.studycafe.tobe.model.StudyCafeLockerPass;
 import cleancode.studycafe.tobe.model.StudyCafePass;
 
 import java.util.List;
+import java.util.Map;
 
 public interface FileHandler {
 
@@ -11,7 +12,7 @@ public interface FileHandler {
     String LOCKER_PATH = "src/main/resources/cleancode/studycafe/locker.csv";
     String REGEX = ",";
 
-    List<StudyCafePass> readStudyCafePasses();
+    Map<String, List<StudyCafePass>> readStudyCafePasses();
 
-    List<StudyCafeLockerPass> readLockerPasses();
+    Map<String, List<StudyCafeLockerPass>> readLockerPasses();
 }

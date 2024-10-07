@@ -15,9 +15,7 @@ public interface OutputHandler {
 
     void askLockerPass(StudyCafeLockerPass lockerPass);
 
-    void showLockerSummary(boolean lockerSelection, StudyCafePass selectedPass, StudyCafeLockerPass lockerPass);
-
-    void showPassOrderSummary(StudyCafePass selectedPass, StudyCafeLockerPass lockerPass);
+    void showPassOrderSummary(boolean lockerSelection, StudyCafePass selectedPass, StudyCafeLockerPass lockerPass);
 
     void showSimpleMessage(String message);
 }
