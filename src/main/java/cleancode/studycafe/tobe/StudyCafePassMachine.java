@@ -13,6 +13,7 @@ import cleancode.studycafe.tobe.studycafe.StudyCafeRunable;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public class StudyCafePassMachine implements StudyCafeInitializable, StudyCafeRunable {
 
@@ -58,19 +59,21 @@ public class StudyCafePassMachine implements StudyCafeInitializable, StudyCafeRu
         outputHandler.showPassListForSelection(passes);
         StudyCafePass selectedPass = inputHandler.getSelectPass(passes);
 
-        if (checkStudyCafePassType(studyCafePassType, StudyCafePassType.FIXED)) {
+        if (checkStudyCafePassType(studyCafePassType)) {
             List<StudyCafeLockerPass> lockerPasses = this.lockerPasses.get(studyCafePassType.name());
-            StudyCafeLockerPass lockerPass = (StudyCafeLockerPass) lockerPasses.stream().filter(pass -> pass.getDuration() == selectedPass.getDuration());
-            outputHandler.askLockerPass(lockerPass);
+            Optional<StudyCafeLockerPass> lockerPass = lockerPasses.stream().filter(pass -> pass.getDuration() == selectedPass.getDuration()).findFirst();
+            if (lockerPass.isPresent()) {
+            outputHandler.askLockerPass(lockerPass.get());
             boolean lockerSelection = inputHandler.getLockerSelection();
-            outputHandler.showPassOrderSummary(lockerSelection, selectedPass, lockerPass);
+            outputHandler.showPassOrderSummary(lockerSelection, selectedPass, lockerPass.get());
+            }
         } else {
             outputHandler.showPassOrderSummary(false, selectedPass, null);
         }
     }
 
-    private boolean checkStudyCafePassType(StudyCafePassType passType, StudyCafePassType targetType) {
-        return passType == targetType;
+    private boolean checkStudyCafePassType(StudyCafePassType passType) {
+        return passType == StudyCafePassType.FIXED;
     }
 
 }
