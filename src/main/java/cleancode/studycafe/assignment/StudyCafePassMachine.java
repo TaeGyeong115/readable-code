@@ -1,6 +1,5 @@
 package cleancode.studycafe.assignment;
 
-import cleancode.studycafe.assignment.config.StudyCafeConfig;
 import cleancode.studycafe.assignment.exception.AppException;
 import cleancode.studycafe.assignment.io.FileHandler;
 import cleancode.studycafe.assignment.io.InputHandler;

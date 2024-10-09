@@ -1,7 +1,5 @@
 package cleancode.studycafe.assignment;
 
-import cleancode.studycafe.assignment.config.StudyCafeConfig;
-
 public class StudyCafeApplication {
 
     public static void main(String[] args) {
