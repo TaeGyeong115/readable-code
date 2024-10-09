@@ -1,6 +1,6 @@
-package cleancode.studycafe.tobe.config;
+package cleancode.studycafe.assignment.config;
 
-import cleancode.studycafe.tobe.io.*;
+import cleancode.studycafe.assignment.io.*;
 
 public class StudyCafeConfig {
 

@@ -1,4 +1,4 @@
-package cleancode.studycafe.tobe.model;
+package cleancode.studycafe.assignment.model;
 
 public class StudyCafePass {
 
@@ -26,12 +26,12 @@ public class StudyCafePass {
         return duration;
     }
 
-    public int getPrice() {
-        return price;
+    public int getTotalPrice(StudyCafeLockerPass lockerPass) {
+        return price - getDiscountPrice() + (lockerPass != null ? lockerPass.getPrice() : 0);
     }
 
-    public double getDiscountRate() {
-        return discountRate;
+    public int getDiscountPrice() {
+        return (int) (price * discountRate);
     }
 
     public String display() {
@@ -46,5 +46,4 @@ public class StudyCafePass {
         }
         return "";
     }
-
 }

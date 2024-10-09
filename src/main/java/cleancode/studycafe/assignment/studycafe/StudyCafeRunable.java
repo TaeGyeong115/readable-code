@@ -1,4 +1,4 @@
-package cleancode.studycafe.tobe.studycafe;
+package cleancode.studycafe.assignment.studycafe;
 
 public interface StudyCafeRunable {
 
