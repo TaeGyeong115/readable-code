@@ -16,11 +16,12 @@ import java.util.Optional;
 
 public class StudyCafePassMachine {
 
-    private final StudyCafeIOHandler ioHandler = new StudyCafeIOHandler();
+    private final StudyCafeIOHandler ioHandler;
     private final SeatPassProvider seatPassProvider;
     private final LockerPassProvider lockerPassProvider;
 
-    public StudyCafePassMachine(SeatPassProvider seatPassProvider, LockerPassProvider lockerPassProvider) {
+    public StudyCafePassMachine(StudyCafeIOHandler ioHandler, SeatPassProvider seatPassProvider, LockerPassProvider lockerPassProvider) {
+        this.ioHandler = ioHandler;
         this.seatPassProvider = seatPassProvider;
         this.lockerPassProvider = lockerPassProvider;
     }
