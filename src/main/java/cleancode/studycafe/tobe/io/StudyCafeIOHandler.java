@@ -12,7 +12,6 @@ public class StudyCafeIOHandler {
     private final InputHandler inputHandler = new InputHandler();
     private final OutputHandler outputHandler = new OutputHandler();
 
-
     public void showWelcomeMessage() {
         outputHandler.showWelcomeMessage();
     }
