@@ -1,7 +1,6 @@
 package cleancode.studycafe.assignment.model;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 public class StudyCafeSeatPasses {
 
