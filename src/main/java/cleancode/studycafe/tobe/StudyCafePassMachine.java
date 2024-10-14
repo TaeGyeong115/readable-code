@@ -70,7 +70,6 @@ public class StudyCafePassMachine {
 
         return Optional.empty();
     }
-
     private Optional<StudyCafeLockerPass> findLockerPassCandidateBy(StudyCafeSeatPass pass) {
         StudyCafeLockerPasses allLockerPasses = lockerPassProvider.getLockerPasses();
         return allLockerPasses.findLockerPassBy(pass);
