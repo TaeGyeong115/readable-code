@@ -24,9 +24,12 @@ public class StudyCafePassOrder {
     }
 
     public int getTotalPrice() {
+        if (lockerPass != null && seatPass.getPassType().isNotLockerType()) {
+            throw new IllegalArgumentException("락커를 사용할 수 없는 사용권입니다.");
+        }
+
         int lockerPassPrice = lockerPass != null ? lockerPass.getPrice() : 0;
         int totalPassPrice = seatPass.getPrice() + lockerPassPrice;
-
         return totalPassPrice - getDiscountPrice();
     }
 
